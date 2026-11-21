@@ -1,0 +1,144 @@
+:root {
+  color-scheme: dark;
+  --background: #111524;
+  --surface: #1b2134;
+  --text: #f6f3ed;
+  --secondary: #c0c8d9;
+  --accent: #f1d093;
+  --line: #414a61;
+  font-family: system-ui, -apple-system, sans-serif;
+  line-height: 1.65;
+  color: var(--text);
+  background: var(--background);
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color-scheme: light;
+    --background: #f7f8fb;
+    --surface: #fff;
+    --text: #172036;
+    --secondary: #4e5a73;
+    --accent: #775317;
+    --line: #c8cdd8;
+  }
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  padding-bottom: 4rem;
+}
+
+.wrap {
+  width: min(48rem, calc(100% - 2rem));
+  margin-inline: auto;
+}
+
+.masthead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem 1.25rem;
+  flex-wrap: wrap;
+  padding-block: 1rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  color: var(--text);
+  font-weight: 650;
+  text-decoration: none;
+}
+
+.brand img { border-radius: 0.625rem; }
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 1rem;
+}
+
+nav a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.75rem;
+  color: var(--secondary);
+  font-size: 0.9375rem;
+  text-underline-offset: 0.3em;
+}
+
+nav a[aria-current="page"] {
+  color: var(--accent);
+  font-weight: 650;
+}
+
+.intro {
+  padding-block: clamp(2.25rem, 6vw, 4rem) 1.5rem;
+}
+
+h1, h2 {
+  margin: 0;
+  line-height: 1.18;
+  text-wrap: balance;
+}
+
+h1 {
+  font-size: clamp(1.95rem, 5.5vw, 3.35rem);
+  letter-spacing: -0.025em;
+  overflow-wrap: anywhere;
+}
+
+h2 { font-size: clamp(1.25rem, 2.5vw, 1.5rem); }
+
+p {
+  margin: 0.85rem 0 0;
+  max-width: 68ch;
+}
+
+.lead, .edition { color: var(--secondary); }
+.lead { font-size: 1.125rem; }
+
+section {
+  padding-block: 1.5rem;
+  border-top: 1px solid var(--line);
+}
+
+.contact {
+  margin-top: 0.75rem;
+  padding: clamp(1rem, 4vw, 1.75rem);
+  border: 1px solid var(--line);
+  border-radius: 1rem;
+  background: var(--surface);
+}
+
+a {
+  color: var(--accent);
+  overflow-wrap: anywhere;
+  text-underline-offset: 0.18em;
+}
+
+a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+  border-radius: 0.25rem;
+}
+
+.email {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.75rem;
+  font-size: 1.125rem;
+  font-weight: 650;
+}
+
+.sources {
+  padding-inline-start: 1.25rem;
+  margin-bottom: 0;
+}
+
+.sources li + li { margin-top: 0.4rem; }
